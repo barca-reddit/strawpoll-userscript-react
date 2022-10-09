@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name          Strawpoll User Script React
 // @namespace     strawpoll-userscript-react
-// @version       1.0.1
+// @version       1.0.2
 // @description   Violent Monkey user script that provides a React modal to create and submit match polls on Reddit and Discord.
 // @author        decho
 // @homepageURL   https://github.com/barca-reddit/strawpoll-userscript-react
-// @downloadURL   https://raw.githubusercontent.com/barca-reddit/strawpoll-userscript-react/master/dist/script.user.js
+// @downloadURL   https://raw.githubusercontent.com/barca-reddit/strawpoll-userscript-react/master/dist/strawpoll.user.js
 // @icon          https://cdn.discordapp.com/emojis/783962469000675328.webp
 // @resource      css https://raw.githubusercontent.com/barca-reddit/strawpoll-userscript-react/master/dist/style.user.css
 // @match         https://*.strawpoll.com/*

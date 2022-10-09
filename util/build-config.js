@@ -13,7 +13,7 @@ const metadata = ({ env, ver }) => {
         {
             name: 'Strawpoll User Script React',
             version: ver,
-            downloadURL: 'https://raw.githubusercontent.com/barca-reddit/strawpoll-userscript-react/master/dist/script.user.js',
+            downloadURL: 'https://raw.githubusercontent.com/barca-reddit/strawpoll-userscript-react/master/dist/strawpoll.user.js',
             css: 'https://raw.githubusercontent.com/barca-reddit/strawpoll-userscript-react/master/dist/style.user.css'
         }
 
