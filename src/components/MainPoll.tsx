@@ -42,32 +42,23 @@ type Props = Pick<IModalProps, 'poll' | 'request' | 'setPage' | 'setPoll' | 'set
     selectedCount: number
 }
 
-interface CustomInput extends HTMLInputElement {
-    dataset: {
-        edited: string;
-    }
-}
-
 export const MainPoll = ({ children, poll, request, selectedCount, setPage, setPoll, setRequest }: Props) => {
-    const titleRef = useRef<CustomInput>(null);
+    const titleRef = useRef<HTMLInputElement>(null);
 
     const submitForm = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
-        if (titleRef.current?.dataset.edited !== 'true') {
+        if (!poll.titleEdited) {
             titleRef.current?.setCustomValidity('Please edit the poll title.');
             titleRef.current?.reportValidity();
         }
         else {
-            setPoll({ items: { title: titleRef.current.value } });
             await setRequest({ type: 'strawpoll' });
         }
     };
 
-    const setEdited = () => {
-        if (titleRef.current?.dataset?.edited) {
-            titleRef.current.dataset.edited = 'true';
-            titleRef.current.setCustomValidity('');
-        }
+    const onInput = (e: React.FormEvent<HTMLInputElement>) => {
+        titleRef.current?.setCustomValidity('');
+        setPoll({ items: { title: e.currentTarget.value, titleEdited: true } });
     };
 
     return (
@@ -77,7 +68,7 @@ export const MainPoll = ({ children, poll, request, selectedCount, setPage, setP
             </div>
             <footer>
                 <form id="form-poll">
-                    <input ref={titleRef} className='big' type="text" defaultValue={poll.title} data-edited="false" onInput={setEdited} required />
+                    <input ref={titleRef} className='big' type="text" value={poll.title} onInput={(e) => onInput(e)} required />
                     <Button
                         text='Create Poll'
                         disabled={selectedCount < 11 ? true : false}
