@@ -1,0 +1,4 @@
+.modal-toggle {
+    @apply fixed bottom-0 right-0 z-40 mb-8 mr-8 cursor-pointer items-center rounded-md px-8 py-4;
+    @apply bg-zinc-700 text-sm font-semibold text-zinc-100 shadow-md shadow-zinc-900;
+}

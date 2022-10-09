@@ -1,0 +1,72 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "jsxPragma": null,
+        "sourceType": "module",
+        "project": ["./tsconfig.json"]
+    },
+    "ignorePatterns": ["*.*", "!src/**/*"],
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint"
+    ],
+    "settings": {
+        "react": {
+            "createClass": "createReactClass", // Regex for Component Factory to use,
+            // default to "createReactClass"
+            "pragma": "React", // Pragma to use, default to "React"
+            "fragment": "Fragment", // Fragment to use (may be a property of <pragma>), default to "Fragment"
+            "version": "detect", // React version. "detect" automatically picks the version you have installed.
+            // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+            // It will default to "latest" and warn if missing, and to "detect" in the future
+            "flowVersion": "0.53" // Flow version
+        }
+    },
+    "rules": {
+        "semi": ["warn", "always"],
+        "quotes": ["warn", "single"],
+        "eqeqeq": ["error", "always", {
+            "null": "ignore"
+        }],
+        "react/react-in-jsx-scope": 0,
+        "react/jsx-uses-react": 0,
+        "no-unsafe-optional-chaining": ["error", {
+            "disallowArithmeticOperators": true
+        }],
+        "@typescript-eslint/no-unused-vars": ["warn"],
+        "@typescript-eslint/no-floating-promises": ["error", {
+            "ignoreVoid": false,
+            "ignoreIIFE": true
+        }],
+        "@typescript-eslint/no-misused-promises": ["error", {
+            "checksVoidReturn": false
+        }],
+        "@typescript-eslint/await-thenable": ["error"],
+        "@typescript-eslint/consistent-type-imports": ["warn", {
+            "prefer": "type-imports"
+        }],
+        "@typescript-eslint/consistent-type-exports": ["warn", {
+            "fixMixedExportsWithInlineTypeSpecifier": true
+        }],
+        "@typescript-eslint/explicit-member-accessibility": ["warn", {
+            "accessibility": "explicit",
+            "overrides": {
+                "constructors": "off"
+            }
+        }]
+    }
+}

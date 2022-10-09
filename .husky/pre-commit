@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# run typescript compiler in noEmit mode
+# https://www.typescriptlang.org/tsconfig#noEmit
+
+echo Running post-commit task: tsc [1/2]
+npx tsc --project tsconfig.json
+
+# run eslint
+# https://eslint.org/docs/latest/user-guide/command-line-interface#--max-warnings
+
+echo Running post-commit task: eslint [2/2]
+npx eslint --ext .ts,.tsx --max-warnings 0 src/

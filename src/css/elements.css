@@ -1,0 +1,49 @@
+.modal {
+    @apply box-border select-none font-inter text-xs;
+    @apply text-neutral-700 dark:text-neutral-300;
+}
+
+.modal h2 {
+    @apply text-base font-semibold uppercase;
+    @apply text-neutral-500 dark:text-neutral-400;
+}
+
+.modal h3 {
+    @apply text-sm font-semibold uppercase;
+    @apply text-neutral-500 dark:text-neutral-400;
+}
+
+.modal label {
+    @apply flex cursor-pointer flex-col gap-1;
+}
+
+.modal label span {
+    @apply text-xs font-semibold uppercase;
+    @apply text-neutral-500 dark:text-neutral-400;
+}
+
+.modal input[type="text"],
+.modal input[type="number"] {
+    @apply flex-grow truncate rounded-md border text-xs shadow-sm ring-0;
+    @apply border-neutral-300 bg-neutral-50 text-neutral-700 focus:border-sky-300 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:focus:border-sky-500;
+}
+
+.modal input.big[type="text"] {
+    @apply text-sm font-medium;
+}
+
+.modal input[type="checkbox"] {
+    @apply relative flex h-5 w-10 cursor-pointer appearance-none items-center rounded-full border-0 bg-none p-1 shadow-none ring-0 transition duration-300 focus:ring-offset-0;
+    @apply bg-neutral-300 after:bg-neutral-100 checked:bg-sky-500;
+    @apply after:absolute after:h-4 after:w-4 after:translate-x-0 after:rounded-full after:shadow after:transition after:duration-300 checked:after:translate-x-full;
+}
+
+.modal input[type="checkbox"]::after {
+    content: "";
+}
+
+.modal input[type="text"]:invalid,
+.modal input[type="number"]:invalid,
+.modal input[type="checkbox"]:invalid {
+    @apply border-red-300 focus:border-red-300;
+}

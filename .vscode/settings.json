@@ -1,0 +1,9 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "search.exclude": {
+        "**/dist": true
+    },
+    "css.lint.unknownAtRules": "ignore"
+}

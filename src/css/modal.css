@@ -1,0 +1,147 @@
+.modal-wrapper {
+    @apply fixed top-0 left-0 z-50 h-screen w-screen flex-col items-center justify-center backdrop-blur-sm;
+    @apply bg-neutral-900/90;
+}
+
+.modal {
+    @apply grid grid-rows-[auto_1fr] content-center justify-items-stretch rounded p-4;
+    @apply h-[80vh] w-[75vw] xl:w-[60vw];
+    @apply bg-neutral-50 dark:bg-neutral-800;
+}
+
+.modal #form-settings {
+    @apply flex flex-col items-stretch justify-center gap-4;
+}
+
+.modal #form-poll {
+    @apply flex flex-1 gap-2;
+}
+
+.modal #area-results {
+    @apply flex flex-col items-stretch justify-center gap-4;
+}
+
+.modal #script-info {
+    @apply flex flex-col items-center justify-center gap-2 text-center;
+    @apply text-neutral-500 dark:text-neutral-400;
+}
+
+.modal #script-info img {
+    @apply mb-2 h-12 w-12;
+}
+
+.modal #script-info h1 {
+    @apply text-base font-semibold uppercase;
+}
+
+.modal #script-info h4 {
+    @apply text-xs font-semibold;
+}
+
+.modal #script-info a {
+    @apply text-xs font-semibold;
+    @apply text-sky-500 dark:text-sky-700;
+}
+
+.modal #script-info span {
+    @apply text-xs;
+}
+
+.modal footer {
+    @apply flex items-center justify-end gap-x-2;
+}
+
+.modal .icon-list {
+    @apply flex gap-x-2;
+}
+
+.modal .icon-list li {
+    @apply relative flex h-10 w-10 items-center justify-center rounded-full border;
+    @apply before:absolute before:bottom-full before:mb-2 before:hidden before:whitespace-nowrap before:rounded before:p-2 before:text-center before:text-[10px] before:content-[attr(data-text)] hover:before:block;
+    @apply border-neutral-300 before:bg-zinc-700 before:text-neutral-100 dark:border-neutral-500;
+}
+
+.modal .icon-list .icon {
+    @apply h-5 w-5;
+    @apply text-neutral-500 dark:text-neutral-300;
+}
+
+.modal .icon {
+    @apply h-6 w-6 cursor-pointer;
+}
+
+.modal .icon svg {
+    @apply h-full w-full;
+}
+
+.modal .button {
+    @apply relative flex items-center  rounded;
+    @apply border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-700;
+}
+
+.modal .button.loading {
+    @apply pointer-events-none text-transparent;
+}
+
+.modal .button.loading::before {
+    @apply absolute h-[18px] w-[18px] animate-spin rounded-full border-[3px];
+    @apply border-neutral-400 border-l-transparent border-b-transparent;
+    content: "";
+}
+
+.modal main {
+    @apply flex animate-fadeIn flex-col gap-y-4 overflow-hidden p-4;
+}
+
+.modal main > *:nth-child(1) {
+    @apply flex-grow;
+}
+
+.modal .player-list {
+    @apply flex flex-col gap-y-4 overflow-y-scroll overscroll-y-contain;
+}
+
+.modal header {
+    @apply flex items-center justify-between p-4;
+}
+
+/* player list */
+
+.modal .player-list section {
+    @apply space-y-2;
+}
+
+.modal .player-list section .players {
+    @apply grid grid-cols-[repeat(auto-fill,_minmax(14rem,_1fr))] gap-1;
+}
+
+.modal .player-list .player {
+    @apply flex cursor-pointer items-center space-x-2 rounded border py-1 px-2 text-center font-semibold shadow-sm;
+    @apply border-neutral-300 bg-neutral-100 text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300;
+}
+
+.modal .player-list * {
+    @apply transition duration-100 ease-out;
+}
+
+.modal .player-list .player .number {
+    @apply w-6 rounded-full text-[10px];
+    @apply bg-neutral-200 dark:bg-neutral-700;
+}
+
+.modal .player-list .player img {
+    @apply h-8 w-8 rounded-full;
+    @apply bg-neutral-200 dark:bg-neutral-500;
+}
+
+.modal .player-list .player.selected {
+    @apply border-sky-500 dark:border-sky-700;
+}
+
+.modal .player-list .player.selected .number {
+    @apply bg-sky-500 text-neutral-100 dark:bg-sky-700;
+}
+
+.modal .player-list .player.selected img {
+    @apply bg-sky-200 dark:bg-sky-700;
+}

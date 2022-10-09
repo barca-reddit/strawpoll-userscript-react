@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# add git tag for the current version
+# https://git-scm.com/book/en/v2/Git-Basics-Tagging
+
+echo Running post-commit hooks [1/1]
+version=$(node util/package-version.js) && git tag $version
