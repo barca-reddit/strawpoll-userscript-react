@@ -1,7 +1,7 @@
 {
     "name": "strawpoll-userscript-react",
     "description": "Violent Monkey user script that provides a React modal to create match polls.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "decho",
     "license": "ISC",
     "keywords": [

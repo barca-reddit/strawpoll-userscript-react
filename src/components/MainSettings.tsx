@@ -55,7 +55,7 @@ export const MainSettings = ({ initialSettings, setPage, setSettings }: Props) =
                 <img src={GM.info.script.icon} alt="Script logo" />
                 <h1>{GM.info.script.name}</h1>
                 <h4>
-                    <a href="https://github.com/barca-reddit/strawpoll-userscript-react" rel="noreferrer" target="_blank">v.{GM.info.script.version}</a>{` • ${GM.info.platform.browserName} (${GM.info.platform.browserVersion}) • ${GM.info.platform.os} (${GM.info.platform.arch})`}
+                    <a href="https://github.com/barca-reddit/strawpoll-userscript-react/tags" rel="noreferrer" target="_blank">v.{GM.info.script.version}</a>{` • ${GM.info.platform.browserName} (${GM.info.platform.browserVersion}) • ${GM.info.platform.os} (${GM.info.platform.arch})`}
                 </h4>
                 <span>{GM.info.script.description}</span>
             </div>
