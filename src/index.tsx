@@ -31,6 +31,14 @@ const observer = new MutationObserver(async (mutations) => {
 observer.observe(document.documentElement, { childList: true });
 
 const init = async () => {
+    /**
+     * In development, CSS is injected via util/css-loader.js
+     * In production, CSS is injected via `getResourceText` with an additional `@grant`.
+     */
+    if (typeof GM.getResourceText !== 'undefined') {
+        await GM.addStyle(GM.getResourceText('css'));
+    }
+
     const initialSettings = await Storage.getAll();
 
     const root = createElement({ id: 'root' });

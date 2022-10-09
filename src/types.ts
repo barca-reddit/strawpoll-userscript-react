@@ -170,7 +170,7 @@ declare interface ViolentMonkey {
         version: string;
         /**
          * Unlike `navigator.userAgent`, which can be overriden by other extensions/userscripts
-         * or by devtools in device-emulation mode, `GM_info.platform` is more reliable as the
+         * or by devtools in device-emulation mode, `GM.info.platform` is more reliable as the
          * data is obtained in the background page of Violentmonkey using a specialized extension
          * API (browser.runtime.getPlatformInfo and getBrowserInfo).
          */
@@ -210,8 +210,8 @@ declare interface ViolentMonkey {
              */
             namenamespace: string;
             /**
-             * Some static resources that can be accessed in the script by `GM_getResourceText` and
-             * `GM_getResourceURL`. The value is composed of two parts, joined with one or more
+             * Some static resources that can be accessed in the script by `GM.getResourceText` and
+             * `GM.getResourceURL`. The value is composed of two parts, joined with one or more
              * white spaces. The first part is the name of the resource, no white space is allowed
              * in it. The second part is the URL to the resource, which may be relative to the URL
              * the script is being installed from.
@@ -274,6 +274,14 @@ declare interface ViolentMonkey {
      * @see https://violentmonkey.github.io/api/gm/#gm_addstyle
      */
     addStyle(css: string): Promise<void>;
+
+    /**
+     * Retrieves a text resource from the metadata block.
+     * @example let text = GM.getResourceText(name)
+     * @see https://violentmonkey.github.io/api/gm/#gm_getresourcetext
+     */
+    getResourceText(value: string): string;
+
 }
 
 declare global {
@@ -283,6 +291,7 @@ declare global {
         deleteValue: ViolentMonkey['deleteValue'];
         listValues: ViolentMonkey['listValues'];
         addStyle: ViolentMonkey['addStyle'];
+        getResourceText: ViolentMonkey['getResourceText'];
         info: ViolentMonkey['info'];
     };
 }

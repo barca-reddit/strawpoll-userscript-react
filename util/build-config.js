@@ -31,6 +31,7 @@ const metadata = ({ env, ver }) => {
         `// @match         https://*.strawpoll.com/*\n` +
         `// @exclude-match https://*.strawpoll.com/docs/api/*\n` +
         `// @noframes\n` +
+        (env !== 'dev' ? `// @grant      GM.getResourceText\n` : '') +
         `// @grant         GM.addStyle\n` +
         `// @grant         GM.listValues\n` +
         `// @grant         GM.getValue\n` +
