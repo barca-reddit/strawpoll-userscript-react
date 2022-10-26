@@ -22,6 +22,7 @@ const players: Omit<IPlayer, 'id' | 'selected'>[] = [
     { name: 'Frenkie de Jong', number: 21, position: 'mid', photo: 'https://cdn.discordapp.com/attachments/784418814661623809/1023115912519352360/21-frenkie.png' },
     { name: 'Marc Casado', number: 29, position: 'mid', photo: 'https://cdn.discordapp.com/attachments/784418814661623809/1023116293123080212/29-casado.png' },
     { name: 'Gavi', number: 30, position: 'mid', photo: 'https://cdn.discordapp.com/attachments/784418814661623809/1023116293584465940/30-gavi.png' },
+    { name: 'Pablo Torre', number: 32, position: 'mid', photo: 'https://cdn.discordapp.com/attachments/784418814661623809/1023116294389760060/32-torre.png' },
     { name: 'Álvaro Sanz', number: 34, position: 'mid', photo: 'https://cdn.discordapp.com/attachments/784418814661623809/1023116295572570153/34-sanz.png' },
     { name: 'Ousmane Dembélé', number: 7, position: 'att', photo: 'https://cdn.discordapp.com/attachments/784418814661623809/1023115378391519242/07-dembele.png' },
     { name: 'Robert Lewandowski', number: 9, position: 'att', photo: 'https://cdn.discordapp.com/attachments/784418814661623809/1023115379217813534/09-lewandowski.png' },
